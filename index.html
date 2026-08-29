@@ -91,25 +91,6 @@
       position: relative; overflow: hidden;
     }
 
-    .hero-bg {
-      position: absolute; inset: 0; z-index: 0;
-      background-image: url('hero-cover.png');
-      background-size: cover;
-      background-position: right 58%;
-      opacity: 0.35;
-    }
-
-    .hero-bg-overlay {
-      position: absolute; inset: 0; z-index: 1;
-      background: linear-gradient(
-        to right,
-        rgba(8, 20, 35, 0.97) 0%,
-        rgba(8, 20, 35, 0.88) 40%,
-        rgba(8, 20, 35, 0.45) 70%,
-        rgba(8, 20, 35, 0.2) 100%
-      );
-    }
-
     /* mesh grid overlay */
     .hero::before {
       content: '';
@@ -121,7 +102,25 @@
       pointer-events: none;
     }
 
-    .hero-inner { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
+    .hero-inner {
+      position: relative; z-index: 2; max-width: 1120px; margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 56px;
+    }
+    .hero-text { flex: 1 1 480px; max-width: 560px; }
+    .hero-photo-wrap { flex: 0 0 auto; }
+    .hero-photo {
+      width: min(360px, 80vw); aspect-ratio: 899 / 974;
+      object-fit: cover; object-position: top center;
+      border-radius: 18px; border: 2px solid var(--border);
+      box-shadow: 0 20px 60px rgba(5,13,24,0.55);
+      display: block;
+    }
+    @media (max-width: 860px) {
+      .hero-inner { flex-direction: column-reverse; text-align: center; gap: 32px; }
+      .hero-text { max-width: 100%; }
+      .hero-body { margin-left: auto; margin-right: auto; }
+      .hero-actions { justify-content: center; }
+    }
     .hero-eyebrow {
       display: inline-flex; align-items: center; gap: 10px;
       font-family: Arial, sans-serif; font-size: 12px;
@@ -599,17 +598,20 @@
 
 <!-- ───────── HERO ───────── -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-bg-overlay"></div>
   <div class="hero-inner">
-    <h1>You found this<br><em>for a reason.</em></h1>
-    <p class="hero-body">
-      For people who want their health<br>back, and are ready to start building<br>real income at the same time.
-    </p>
-    <p class="hero-note" style="margin-top: 100px;">No obligation. Watch, ask questions, then decide.</p>
-    <div class="hero-actions" style="margin-top: 34px;">
-      <a href="#videos" class="btn-primary">Watch the Videos</a>
-      <a href="#contact" class="btn-primary">Book a Presentation</a>
+    <div class="hero-text">
+      <h1>You found this<br><em>for a reason.</em></h1>
+      <p class="hero-body">
+        For people who want their health<br>back, and are ready to start building<br>real income at the same time.
+      </p>
+      <p class="hero-note" style="margin-top: 8px;">No obligation. Watch, ask questions, then decide.</p>
+      <div class="hero-actions" style="margin-top: 34px;">
+        <a href="#videos" class="btn-primary">Watch the Videos</a>
+        <a href="#contact" class="btn-primary">Book a Presentation</a>
+      </div>
+    </div>
+    <div class="hero-photo-wrap">
+      <img src="dean-lyrese-hero.jpg" alt="Dean and Lyrese Picard" class="hero-photo" />
     </div>
   </div>
 </section>
