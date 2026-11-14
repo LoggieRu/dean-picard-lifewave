@@ -126,19 +126,19 @@
     @keyframes mistDrift { from { transform: translate3d(-3%, -2%, 0) scale(1.05); } to { transform: translate3d(3%, 2%, 0) scale(1.12); } }
 
     .hero-inner {
-      position: relative; z-index: 2; max-width: 1360px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 72px); box-sizing: border-box;
+      position: relative; z-index: 2; max-width: 1500px; margin: 0 auto; padding: 0 clamp(20px, 3vw, 48px); box-sizing: border-box;
       display: flex; align-items: center; justify-content: space-between; gap: 48px;
     }
-    .hero-text { flex: 0 1 470px; max-width: 520px; }
+    .hero-text { flex: 0 0 520px; max-width: 520px; }
     .hero-photo-wrap { flex: 1 1 0; min-width: 0; display: flex; justify-content: flex-end; }
     .hero-photo {
-      width: 100%; max-width: 820px; aspect-ratio: 3 / 2;
+      width: 100%; max-width: 900px; aspect-ratio: 3 / 2;
       object-fit: cover; object-position: center 25%;
       border-radius: 18px; border: 2px solid var(--border);
       box-shadow: 0 20px 60px rgba(5,13,24,0.55);
       display: block;
     }
-    @media (max-width: 860px) {
+    @media (max-width: 1100px) {
       .hero-inner { flex-direction: column-reverse; text-align: center; gap: 32px; }
       .hero-text { max-width: 100%; flex: 0 0 auto; }
       .hero-photo-wrap { flex: 0 0 auto; width: 100%; justify-content: center; }
